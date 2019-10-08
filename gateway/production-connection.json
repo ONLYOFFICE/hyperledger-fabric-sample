@@ -1,0 +1,62 @@
+{
+    "name": "onlyonet-channel",
+    "description": "Network on IBP v2",
+    "version": "1.0.0",
+    "client": {
+        "organization": "ASCMSP"
+    },
+    "organizations": {
+        "ASCMSP": {
+            "mspid": "ASCMSP",
+            "peers": [
+                "peer0.onlyoffice.dev"
+            ],
+            "certificateAuthorities": [
+                "rca.onlyoffice.dev"
+            ]
+        }
+    },
+    "channels": {
+        "onlyonet-channel": {
+            "orderers": [
+                "orderer.onlyoffice.dev"
+            ],
+            "peers": {
+                "peer0.onlyoffice.dev": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                }
+            }
+        }
+    },
+    "orderers": {
+        "orderer.onlyoffice.dev": {
+            "url": "grpcs://184.172.229.27:31907",
+            "tlsCACerts": {
+                "pem": ""
+            }
+        }
+    },
+    "peers": {
+        "peer0.onlyoffice.dev": {
+            "url": "grpcs://184.172.229.27:31450",
+            "tlsCACerts": {
+                "pem": ""
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "184.172.229.27"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "rca.onlyoffice.dev": {
+            "url": "https://184.172.229.27:30615",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": ""
+            }
+        }
+    }
+}

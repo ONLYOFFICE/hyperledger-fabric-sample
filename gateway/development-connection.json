@@ -1,0 +1,82 @@
+{
+    "name": "onlyonet",
+    "version": "1.0.0",
+    "description": "",
+    "client": {
+        "organization": "ASCMSP",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "onlyonet-channel-5973": {
+            "orderers": [
+                "orderer.onlyoffice.dev"
+            ],
+            "peers": {
+                "peer0.onlyoffice.dev": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                }
+            }
+        }
+    },
+    "organizations": {
+        "ASCMSP": {
+            "mspid": "ASCMSP",
+            "peers": [
+                "peer0.onlyoffice.dev"
+            ],
+            "certificateAuthorities": [
+                "rca.onlyoffice.dev"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.onlyoffice.dev": {
+            "url": "grpcs://orderer.onlyoffice.dev:7050",
+            "grpcOptions": {
+                "ssl-target-name-override":"orderer.onlyoffice.dev"
+            },
+            "httpOptions": {
+                "verify": true
+            },
+            "tlsCACerts": {
+                "path": "../gateway/tlscerts/tls.rca.onlyoffice.dev-cert.pem"
+            } 
+        }
+    },
+    "peers": {
+        "peer0.onlyoffice.dev": {
+            "url": "grpcs://peer0.onlyoffice.dev:7051",
+            "grpcOptions": {
+                "ssl-target-name-override":"peer0.onlyoffice.dev"
+            },
+            "httpOptions": {
+                "verify": true
+            },
+            "tlsCACerts": {
+                "path": "../gateway/tlscerts/tls.rca.onlyoffice.dev-cert.pem"
+            }      
+        }
+    },
+    "certificateAuthorities": {
+        "rca.onlyoffice.dev": {
+            "url": "https://rca.onlyoffice.dev:7054",
+            "caName": "rca.onlyoffice.dev",
+            "httpOptions": {
+                "verify": true
+            },
+            "tlsCACerts": {
+                "path": "../gateway/tlscerts/tls.rca.onlyoffice.dev-cert.pem"
+            }                     
+        }
+    }
+}

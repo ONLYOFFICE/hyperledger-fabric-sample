@@ -1,0 +1,20 @@
+{
+  "name": "onlyonet-chaincode",
+  "version": "1.0.4",
+  "description": "",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "start": "fabric-chaincode-node start"
+  },
+  "engineStrict": true,
+  "main": "index.js",
+  "author": "Ascensio System SIA <support@onlyoffice.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "fabric-contract-api": "^1.4.2",
+    "fabric-shim": "^1.4.2"
+  }
+}

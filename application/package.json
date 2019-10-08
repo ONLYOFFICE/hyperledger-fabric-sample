@@ -1,0 +1,30 @@
+{
+  "name": "onlyoffice",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "main": "index-client.js",
+  "scripts": {
+    "start-client": "node index-client.js",
+    "start-server": "node index-server.js"
+  },
+  "author": "Ascensio System SIA <support@onlyoffice.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@fidm/x509": "^1.2.1",
+    "body-parser": "^1.19.0",
+    "eccrypto": "^1.1.1",
+    "elliptic": "^6.4.1",
+    "express": "^4.17.1",
+    "express-winston": "^3.3.0",
+    "fabric-ca-client": "^1.4.4",
+    "fabric-network": "^1.4.4",
+    "jsrsasign": "^8.0.12",
+    "morgan": "^1.9.1",
+    "secp256k1": "^3.7.1",
+    "winston": "^3.2.1"
+  }
+}
